@@ -209,7 +209,7 @@ var user2 = {
         birthday: '05/02/1990',
         username: 'tylermcginnis33',
         sayEmail: function(){
-            alert('Email is : ' + this.email);
+//            alert('Email is : ' + this.email);
         }
 };
 //Let's say I, the user, decided to change my name and email address to the following
@@ -229,22 +229,29 @@ user2.sayEmail();
 //NEXT PROBLEM
 
 
-
-
 //Create an empty object called methodCollection.
 
   //Code Here
+var methodCollection ={};
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
   //Code Here
+methodCollection.alertHello = function(){
+    alert('hello');
+}
+
+methodCollection.logHello = function(){
+    console.log('hello');
+}
 
 //Now call your alertHello and logHello methods.
 
   //Code Here
-
+methodCollection.alertHello();
+methodCollection.logHello();
 
 
 //NEXT PROBLEM
@@ -255,7 +262,14 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // parameters and returns a new object with all of the information that you passed in.
 
   //Code Here
-
+function makePerson(name, birthday, ssn){
+    var person = {
+        name: name,
+        birthday: birthday,
+        ssn: ssn
+    }
+    return person;
+}
 
 
 //NEXT PROBLEM
@@ -265,6 +279,14 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 // Create a function called makeCard which takes in cardNumber, expirationDate, and securityCode to make a Credit Card object and returns that object so that whenever you invoke makeCard, you get a brand new credit card.
 
   //Code Here
+function makeCard(cardNumber, expirationDate, securityCode){
+    var creditCard = {
+        cardNumber: cardNumber,
+        expirationDate: expirationDate,
+        securityCode: securityCode
+    }
+    return creditCard;
+}
 
 
 
@@ -278,3 +300,17 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 */
 
   //Code Here
+
+
+function bindCard(person, creditCard){
+        var cardProfile = {};
+    for(var key in person){
+        cardProfile[key] = person[key];
+    }
+    for(var key in creditCard){
+        cardProfile[key] = creditCard[key];
+    }
+    return cardProfile;
+    }
+
+

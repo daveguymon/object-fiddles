@@ -73,14 +73,14 @@ backPack.color = 'black';
 
   //Code here
 
-alert(backPack);
+//alert(backPack);
 
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
 Instead, console.log your whole backPack object and then check out the console. */
 
   //Code here
-
+console.log(backPack);
 
 
 
@@ -92,11 +92,22 @@ Instead, console.log your whole backPack object and then check out the console. 
 //Create an 'alsoMe' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
 
   //Code Here
+var alsoMe = {
+    name: 'dave',
+    age: 30,
+    height: '6 feet 5 inches',
+    gender: 'male',
+    married: true,
+    eyeColor: 'brown',
+    hairColor: 'brown'
+}
 
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
   //Code Here
-
+for(var key in alsoMe){
+//    alert(alsoMe[key]);
+}
 
 
 
@@ -109,11 +120,22 @@ Instead, console.log your whole backPack object and then check out the console. 
 
   //Code Here
 
+var album = {
+    song1: '3:45',
+    song2: '3:56',
+    song3: '4:11',
+    song4: '2:47',
+    song5: '7:11'
+}
+
+
 //Now, loop through your album object alerting every song title individually.
 
   //Code Here
 
-
+for(var key in album){
+//    alert(key);
+}
 
 
 //NEXT PROBLEM
@@ -124,18 +146,26 @@ Instead, console.log your whole backPack object and then check out the console. 
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
 
   //Code Here
+var states = {
+    idaho: 20000,
+    utah: 27000,
+    colorado: 13000,
+    california: 100000,
+    alaska: 650000
+};
 
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
   //Code Here
 
-
+for(var key in states){
+    if (states[key] > 30000){
+//        alert(key);
+    }
+}
 
 
 //NEXT PROBLEM
-
-
-
 
 var user1 = {
     name: 'Tyler McGinnis',
@@ -149,11 +179,20 @@ var user1 = {
 that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
+for(var key in user1){
+    if(!user1[key]){
+        delete user1[key];
+    }
+}
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
   //Code Here
+user1.name = 'dave guymon';
+user1.pwHash= 'h0td0g1';
+user1.username = 'dguymon';
 
+console.log(user1);
 
 
 
@@ -177,12 +216,14 @@ var user2 = {
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
   //Code Here
+user2.name = 'Tyler S. McGinnis';
+user2.email = 'tyler.mcginnis@devmounta.in';
 
 //Now call the sayEmail method that's on the user object which will alert the users email
 
   //Code Here
 
-
+user2.sayEmail();
 
 
 //NEXT PROBLEM
